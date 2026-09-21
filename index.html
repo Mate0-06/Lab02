@@ -67,8 +67,8 @@
 				//Load GLTF Model
 
 				new GLTFLoader()
-					.setPath( 'models/FleaRig3.glb' )
-					.load( 'FleaRig3.glb', function ( gltf ) {
+					.setPath( 'models/FleaRig3.gltf' )
+					.load( 'FleaRig3.gltf', function ( gltf ) {
 
 						gltf.scene.scale.set(.003, .003, .003);
 						gltf.scene.position.x = -0.8;
@@ -83,7 +83,7 @@
 				// Load FBX Model and Animation
 
 				const loader = new FBXLoader();
-				loader.load( 'models/flea1.fbx', function ( object ) {
+				loader.load( 'models/FleaRig3.fbx', function ( object ) {
 
 					// Add scale and transform
 
