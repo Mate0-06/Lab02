@@ -87,16 +87,11 @@
 
 					// Add scale and transform
 
-					object.scale.set(0.3, 0.3, 0.3);
+					object.scale.set(0.03, 0.03, 0.03);
 					object.position.x = 0.8;
 					object.position.y = 0.5;
 					object.position.z = -1.5;
 //					object.rotation.y = Math.PI / 2;   // Rotando 90
-
-					mixer = new THREE.AnimationMixer( object );
-
-					const action = mixer.clipAction( object.animations[ 0] );
-					action.play();
 
 					object.traverse( function ( child ) {
 
@@ -148,26 +143,6 @@
 			}
 
 			// 
-
-			function animate() {
-
-				const delta = clock.getDelta();
-
-				if ( mixer ) mixer.update( delta );
-
-				stats.update();
-
-				render();
-
-			}
-
-			renderer.setAnimationLoop( animate );
-
-			function render() {
-
-				renderer.render( scene, camera );
-
-			}
 		</script>
 	</body>
 </html>
