@@ -34,7 +34,7 @@
 			//Add this for stats animation
 			import Stats from 'three/addons/libs/stats.module.js';
 			import { FBXLoader } from 'three/addons/loaders/FBXLoader.js';
-			
+			import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
 
 			//
@@ -64,6 +64,19 @@
 				const light = new THREE.DirectionalLight( 0xffffff, 3 );
 				light.position.set( 1, 1, 1 ).normalize();
 				scene.add( light );
+				//Load GLTF Model
+
+				new GLTFLoader()
+					.setPath( 'models/gltf/' )
+					.load( 'Nave.gltf', function ( gltf ) {
+
+						gltf.scene.scale.set(.003, .003, .003);
+						gltf.scene.position.x = -0.8;
+						gltf.scene.position.y = 0.3;
+						gltf.scene.position.z = -1.5;
+
+						scene.add( gltf.scene );
+
 					} );
 
 
